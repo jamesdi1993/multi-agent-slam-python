@@ -1,0 +1,40 @@
+data:
+  name: "Intel Research Lab"
+  path: "/home/jamesdi1993/datasets/2dlaser/intel/sequences"
+  mode: "max" # number of steps to run sequence. One of [min, max, custom]
+  steps: -1  # note: need mode to be 'custom' to take effect. Run the first n steps.
+map:
+  grid_min: [ -15, -25 ]
+  grid_max: [ 20, 10 ]
+  origin: [0, 0, 0]
+  grid_size: 0.1
+agent:
+  enable_communicate: True
+  n_agents: 5
+  weight: [[0.75, 0.25, 0, 0, 0],
+           [0.25, 0.5, 0.25, 0, 0],
+           [0, 0.25, 0.5, 0.25, 0],
+           [0, 0, 0.25, 0.5, 0.25],
+           [0, 0, 0, 0.25, 0.75]]
+  dist_thresh: 10
+  central_robot_index: -1
+process:
+  sigma: 0.1
+  mu_prior: 0.5
+  c: 1.0
+  l: 0.1
+  max_leaf_size: 50
+  tsdf_thresh: 0.5
+  outlier_thresh: [0.01, 20.0]
+  down_sampling: 1.0
+  window_update: 1
+  count_thresh: 0
+visualization:
+  plot_agent_indices: [0,1,2,3,4]
+  window_plot: -1
+evaluation:
+  grid_size_eval: 0.5
+  window_evaluate: 5
+  write_prediction: true
+  output_dir: "/home/jamesdi1993/workspace/Distributed-Sparse-GP/results/intel"
+

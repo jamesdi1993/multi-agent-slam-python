@@ -1,0 +1,37 @@
+data:
+  dates: ["2012-01-08", "2012-04-29", "2012-06-15", "2012-08-04", "2013-04-05",
+          "2012-01-22", "2012-02-04", "2012-03-17", "2012-03-25", "2012-09-28"]
+  path: "/home/jamesdi1993/datasets/NCLT"
+  mode: "custom"
+  seq: 2
+  steps: 1250 # note: need mode to be 'custom' to take effect. Run the first n steps.
+map:
+  grid_min: [ -400, -150 ]
+  grid_max: [ 150, 750 ]
+  origin: [0, 0, 0]
+  grid_size: 0.25
+agent:
+  enable_communicate: true
+  n_agents: 10
+  weight: [[0.75, 0.25, 0, 0, 0, 0, 0, 0, 0, 0],
+           [0.25, 0.5, 0.25, 0, 0, 0, 0, 0, 0, 0],
+           [0, 0.25, 0.5, 0.25, 0, 0, 0, 0, 0, 0],
+           [0, 0, 0.25, 0.5, 0.25, 0, 0, 0, 0, 0],
+           [0, 0, 0, 0.25, 0.5, 0.25, 0, 0, 0, 0],
+           [0, 0, 0, 0, 0.25, 0.5, 0.25, 0, 0, 0],
+           [0, 0, 0, 0, 0, 0.25, 0.5, 0.25, 0, 0],
+           [0, 0, 0, 0, 0, 0, 0.25, 0.5, 0.25, 0],
+           [0, 0, 0, 0, 0, 0, 0, 0.25, 0.5, 0.25],
+           [0, 0, 0, 0, 0, 0, 0, 0, 0.25, 0.75]]
+process:
+  sigma: 0.1
+  mu_prior: 5.0
+  c: 1.0
+  l: 0.2
+  max_leaf_size: 50
+  tsdf_thresh: 5.0
+  outlier_thresh: [1.0, 30.0]
+  window_update: 1
+  window_evaluate: 50
+  down_sampling: 0.05
+  count_thresh: 0

@@ -1,0 +1,22 @@
+data:
+  date: "2013-04-05"
+  path: "/home/jamesdi1993/datasets/NCLT"
+  mode: "max"
+  steps: -1 # note: need mode to be 'custom' to take effect. Run the first n steps.
+map:
+  grid_min: [ -400, -150 ]
+  grid_max: [ 150, 750 ]
+  origin: [0, 0, 0]
+  grid_size: 0.25
+process:
+  sigma: 0.1
+  mu_prior: 5.0
+  c: 1.0
+  l: 0.2
+  max_leaf_size: 50
+  tsdf_thresh: 5.0
+  outlier_thresh: [1.0, 30.0]
+  window_update: 1
+  window_evaluate: 20000
+  down_sampling: 0.1
+  count_thresh: 0
